@@ -23,11 +23,11 @@ for (const [key,value] of map) {
     console.log(key, ':-', value);
     
 }
-const myObject = {
+/*const myObject = {
     game1: 'Car',
-    game2: 'Ludo'
+    game2: 'Ludo'                 // for of loop not iterable for object
 }
-for (const [key,value] of myObject) {
+for (const [key,value] of myObject) {  
     console.log(key, ':-', value);
     
-}
+}*/ 
