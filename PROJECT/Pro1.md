@@ -6,7 +6,8 @@
 # Solution code
 
 ## project 1
-```javascript
+  JavaScript
+```
 const buttons = document.querySelectorAll(".button");
 const body = document.querySelector("body")
 buttons.forEach(function(button){
@@ -34,6 +35,7 @@ buttons.forEach(function(button){
 ```
 
 ## Project 2
+  JavaScript
 ```
 const Form = document.querySelector('form');
 // This usecase give you empty value
@@ -53,4 +55,19 @@ Form.addEventListener('submit',function(e){
        Result.innerHTML = `<span>Your BMI is ${BMI} </span>`
     }
 })
+```
+
+
+## Project 3
+   JavaScript
+```
+const Clock = document.getElementById('clock')
+//const Clock = document.querySelector('#clock')
+
+setInterval(function(){
+    let date = new Date();
+    Clock.innerHTML = date.toLocaleTimeString();
+},1000);
+      
+
 ```
