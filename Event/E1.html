@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Event</title>
+</head>
+<body style="background-color: black; color:aliceblue;">
+    <h2>Amazing Image</h2>
+    <div>
+        <ul id="Images">
+            <li><img  width ="200px" height="150px" id="Stone" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXrcn4UKyciTR-WjpcMN_0kFFIV9Kr6YDi9qdn63Hnut9w9jwMDst16FKuXhJ5MDK6bgw&usqp=CAU" alt=""></li>
+            <li><img  width ="200px" height="150px" id="Flower" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTple7fvEPBmdqVXw1SaqRkJqWXCiF63_qMX8JYicFDT0nkP2yAgSsGzmsOnd-uvnynJuY&usqp=CAU" alt=""></li>
+            <li><img  width ="200px" height="150px" id="Wallpaper" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVL5zwQzeELFuvxqpDrmQz-CkbgfGUe9UvqErBilw-EJ0FyPAAx91Q2zgH9TSBfiremDA&usqp=CAU" alt=""></li>
+            <li><img  width ="200px" height="150px" id="Butterfly" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYUEPPI6-iBbx68H5gen3KPOIw1Pm2H_jcTE8N3dE_PLyswW1ZzNA0K3Ffw_VQ6xMPwlE&usqp=CAU" alt=""></li>
+            <li><img  width ="200px" height="150px" id="Rose" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc-kW_rdJo29ozfOg5tXpvqhA2wAKRwsJ3EDdVKa-CP4xDRcdj_mQlqbzLLmDtzX8khCk&usqp=CAU" alt=""></li>
+            <li><img  width ="200px" height="150px" id="Moon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ3HIzqnqYN2E-IGMPJPSGTgsebFScjAH24HLyYLerT5UKGUw0coxmm6S5DotLZnu9Vlk&usqp=CAU" alt="" ></li>
+            <li><a style="color:aliceblue;"href ="https://google.com" id="crome">Crome</a></li>      
+        </ul>
+    </div>
+    
+</body>
+<script>
+    // document.getElementById('Moon').onclick = function(){
+     //       alert("Moon Clicked");
+       // }
+    
+       // CORRECT APPROACH
+       document.getElementById('Moon').addEventListener('click',function(e){
+       //console.log(e);
+        //alert("Moon Clicked Again")
+       },false)
+        // attachEvent()
+
+        //jQuery - on
+        //type,timestamp,defaultPrevented
+        //target, toElement, srcElement, currentTarget,
+        //clientX, clientY , screenX, screenY
+        //altkey, ctrlkey , shiftkey, keyCode
+         
+
+        document.getElementById('Images').addEventListener('click',function(e){
+         console.log("ul clicked")
+        })
+
+        document.getElementById('Flower').addEventListener('click',function(e){
+         console.log("Flower clicked")
+         e.stopPropagation()
+        })
+        document.getElementById('crome').addEventListener('click',function(e){
+         e.preventDefault();
+         e.stopPropagation();
+        console.log("Crome clicked")
+         
+        })
+
+        document.querySelector('#Images').addEventListener('click',function(e){
+            console.log(e.target.tagName);
+            if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+            }
+            
+            //removeIt.parentNode.removeChild(removeIt)
+        })
+
+        
+
+            </script>
+</html>
+
