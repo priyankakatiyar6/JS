@@ -1,30 +1,33 @@
 const Form = document.querySelector('form');
-// This usecase give you empty value
-//const Weight = parseInt(document.querySelector('#weight').value)
-Form.addEventListener('submit',function(e){
-  e.preventDefault()
-  const Height = parseInt(document.querySelector('#height').value)
-  const Weight = parseInt(document.querySelector('#weight').value)
-  const Result = document.querySelector('#results')
-  if(Height === '' || Height < 0 ||isNaN(Height)){
-    Result.innerHTML =  `Please give a valid height ${Height}`;
-  }else if(Weight === '' || Weight < 0 ||isNaN(Weight)){
-    Result.innerHTML =  `Please give a valid weight ${Weight}`;
-  } else{
-       const BMI = (Weight/((Height*Height)/10000)).toFixed(2)
-       //Result.innerHTML = `<span>${BMI}</span>`;
-       Result.innerHTML = `<span>Your BMI is ${BMI} </span>`
-       
-       function Message(value){
-        if(value < 18.6 ){
-          Result.innerHTML('You Are UnderWeight')
-        }else if(value < 24.9){
-          Result.innerHTML('Your weight is Normal')
-      
-        }else{
-          Result.innerHTML('You are OverWeight')
-          }
-          Result.Message(BMI);
-        }
-      }
-})
+// this usecase will give you empty
+// const height = parseInt(document.querySelector('#height').value)
+
+Form.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const height = parseInt(document.querySelector('#height').value);
+  const weight = parseInt(document.querySelector('#weight').value);
+  const results = document.querySelector('#results');
+
+  if (height === '' || height < 0 || isNaN(height)) {
+    results.innerHTML = `Please give a valid height ${height}`;
+  } else if (weight === '' || weight < 0 || isNaN(weight)) {
+    results.innerHTML = `Please give a valid weight ${weight}`;
+  } else {
+    const bmi = (weight / ((height * height) / 10000)).toFixed(2);
+    //show the result
+    if(bmi <18.5)
+    {
+      results.innerHTML = `Your BMI is ${bmi} So You are UnderWeight`
+    }
+    else if(bmi<24.5)
+    {
+      results.innerHTML = `Your BMI is ${bmi} So You are is Normal Range of BMI`
+    }
+    else{
+      results.innerHTML = `Your BMI is ${bmi} SoYou are OverWeight`
+    }
+  }
+});
+
+
