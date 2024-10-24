@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card Design</title>
+</head>
+<style>
+ .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: 20px auto;
+  text-align: center;
+  padding: 20px;
+}
+</style>
+<body>
+    <button id="createCardBtn">Create Card</button>
+
+    <div id="cardContainer"></div>
+
+</body>
+<script>
+    const createCardBtn = document.getElementById("createCardBtn");
+const cardContainer = document.getElementById("cardContainer");
+
+createCardBtn.addEventListener("click", () => {
+  const card = document.createElement("div");
+  card.classList.add("card");
+
+  const title = document.createElement("h2");
+  title.textContent = "Card Title";
+  card.appendChild(title);
+
+  const content = document.createElement("p");
+  content.textContent = "This is the card content.";
+  card.appendChild(content);
+
+  cardContainer.appendChild(card);
+});
+</script>
+</html>
